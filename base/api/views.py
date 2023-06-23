@@ -62,8 +62,8 @@ def deleteProduct(request, pk):
 @permission_classes([IsAuthenticated])
 def showProduct(request, pk):
 
-    student = Products.objects.get(id=pk)
-    serilizer = ProductSerializer(student, many=False)
+    product = Products.objects.get(id=pk)
+    serilizer = ProductSerializer(product, many=False)
     return Response(serilizer.data)
 
 
